@@ -1,3 +1,3 @@
 export default function Login() {
-  return (<>登录</>)
+  return <>登录</>;
 }

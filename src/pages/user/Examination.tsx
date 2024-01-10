@@ -1,3 +1,3 @@
 export default function Examination() {
-  return (<>用户审核</>)
+  return <>用户审核</>;
 }
