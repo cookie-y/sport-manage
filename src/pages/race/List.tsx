@@ -1,3 +1,3 @@
 export default function RaceList() {
-  return (<>比赛列表</>)
+  return (<div className="m-5">比赛列表</div>)
 }
