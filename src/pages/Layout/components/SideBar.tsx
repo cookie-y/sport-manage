@@ -1,4 +1,5 @@
 import { Layout, Menu } from 'antd';
+import { useNavigate } from 'react-router-dom';
 const { Sider } = Layout;
 
 const menu = [
@@ -24,12 +25,15 @@ const menu = [
   },
 ];
 
-// 菜单切换
-const onMenuChange = (e) => {
-  console.log(e.key);
-};
+const SideBar = () => {
+  const navigae = useNavigate();
 
-export default function SideBar() {
+  // 菜单切换
+  const onMenuChange = (route: { keyPath: Array<string>; key: string }) => {
+    const path = route.keyPath.reduce((accumulator: string, currentValue: string) => currentValue + accumulator, '');
+    navigae(path);
+  };
+
   return (
     <Sider width={200}>
       <Menu
@@ -41,4 +45,6 @@ export default function SideBar() {
       />
     </Sider>
   );
-}
+};
+
+export default SideBar;

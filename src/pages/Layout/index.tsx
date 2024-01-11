@@ -1,13 +1,8 @@
-import { Layout, Menu, ConfigProvider } from 'antd';
-import type { MenuProps } from 'antd';
+import { Layout, ConfigProvider } from 'antd';
 import { Outlet } from 'react-router-dom';
-const { Header, Content } = Layout;
-import SideBar from './SideBar';
-
-const items1: MenuProps['items'] = ['1', '2', '3'].map((key) => ({
-  key,
-  label: `nav ${key}`,
-}));
+const { Content } = Layout;
+import SideBar from './components/SideBar';
+import Header from './components/Header';
 
 export default function Index() {
   return (
@@ -23,12 +18,10 @@ export default function Index() {
       }}
     >
       <Layout>
-        <Header style={{ display: 'flex', alignItems: 'center' }}>
-          <Menu mode="horizontal" defaultSelectedKeys={['2']} items={items1} />
-        </Header>
+        <Header />
         <Layout>
           <SideBar />
-          <Content style={{ padding: 24, margin: 0, minHeight: 280 }}>
+          <Content style={{ height: 'calc(100vh - 64px)' }}>
             <Outlet />
           </Content>
         </Layout>

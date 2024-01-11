@@ -1,5 +1,6 @@
 import React from 'react';
 import 'virtual:uno.css';
+import './index.scss';
 import ReactDOM from 'react-dom/client';
 
 import { RouterProvider } from 'react-router-dom';
